@@ -1,0 +1,7 @@
+---
+- name: Get current shell
+  command: "{{ lookup('shell', 'echo $SHELL') }}"
+  register: current_shell
+
+- name: Installing ZSH if it's not already installed
+  ansible.builtin.package:
